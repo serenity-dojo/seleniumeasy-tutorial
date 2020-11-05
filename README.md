@@ -1,6 +1,6 @@
 # WebDriver Tutorial Project
 
-This project contains a number of tutorials that use the [seleniumeasy.com](https://www.seleniumeasy.com/test/) demo website.
+This project contains a number of tutorials that use the [seleniumeasy.com](https://www.seleniumeasy.com/test/basic-first-form-demo.html) demo website.
 
 There are a series of classes with pending tests that you will need to complete. 
 The `solutions` packages contain sample solutions using pure Selenium and Serenity BDD.
