@@ -4,9 +4,11 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import serenitylabs.tutorials.seleniumeasy.selenium.WithWebdriverSupport;
 
 import java.time.Duration;
@@ -28,7 +30,21 @@ public class TestingAjaxForms extends WithWebdriverSupport {
     public void enteringASingleInputForm() {
         // TODO: Enter a name and comment, and wait until the success message appears
 
-        String resultMessage = null;
+        WebElement name = driver.findElement(By.id("title"));
+        name.sendKeys("Test");
+
+        WebElement comment = driver.findElement(By.id("description"));
+        comment.sendKeys("Comments");
+
+        WebElement submit = driver.findElement(By.id("btn-submit"));
+        submit.click();
+
+        WebDriverWait wait = new WebDriverWait(driver,30);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("submit-control")));
+
+
+
+        String resultMessage = driver.findElement(By.id("submit-control")).getText();
         assertThat(resultMessage).contains("Form submited Successfully!");
     }
 

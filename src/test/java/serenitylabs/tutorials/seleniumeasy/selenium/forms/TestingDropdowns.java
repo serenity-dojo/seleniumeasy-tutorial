@@ -7,6 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import serenitylabs.tutorials.seleniumeasy.selenium.WithWebdriverSupport;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -23,7 +26,10 @@ public class TestingDropdowns extends WithWebdriverSupport {
     public void simpleSelectList() {
         // TODO: Select a day and check that the result is correctly displayed
 
-        String selectedValue = "";
+        Select select = new Select(driver.findElement(By.id("select-demo")));
+        select.selectByVisibleText("Monday");
+
+        String selectedValue = driver.findElement(By.cssSelector(".selected-value")).getText();
         assertThat(selectedValue).isEqualTo("Day selected :- Monday");
     }
 
@@ -31,8 +37,18 @@ public class TestingDropdowns extends WithWebdriverSupport {
     public void multiSelect() {
         // TODO: Select California","New York",and "Washington" in the dropdown
 
-        List<String> selectedOptions = null;
+        Select select = new Select(driver.findElement(By.id("multi-select")));
+        select.selectByVisibleText("California");
+        select.selectByVisibleText("New York");
+        select.selectByVisibleText("Washington");
+
+        List<String> selectedOptions = select.getAllSelectedOptions()
+                .stream()
+                .map(element -> element.getText())
+                .collect(Collectors.toList());
 
         assertThat(selectedOptions).containsExactly("California","New York","Washington");
+
+
     }
 }

@@ -19,8 +19,11 @@ public class TestingRadioButtons extends WithWebdriverSupport {
     public void singleRadio() {
         // TODO: Click on the second radio and click on 'Get Checked Value' - check that the correct text is displayed.
 
-        String checkedValue = "";
-        assertThat(checkedValue).isEqualTo("Radio button 'Female' is checked");
+        driver.findElement(By.xpath("//*[@value='Female']")).click();
+        driver.findElement(By.id("buttoncheck")).click();
+
+        String checkedValue = driver.findElement(By.cssSelector(".radiobutton")).getText();
+        assertThat(checkedValue.equals("Radio button 'Female' is checked"));
     }
 
 }
