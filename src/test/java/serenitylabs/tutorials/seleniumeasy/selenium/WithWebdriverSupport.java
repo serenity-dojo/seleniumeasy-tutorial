@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public abstract class WithWebdriverSupport {
 
     @FindBy
-    private final String SELENIUM_EASY_DEMO_SITE = "https://www.seleniumeasy.com/test/";
+    private final String SELENIUM_EASY_DEMO_SITE = "https://demo.seleniumeasy.com/";
 
     protected WebDriver driver;
 
