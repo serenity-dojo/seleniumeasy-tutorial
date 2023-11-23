@@ -7,7 +7,7 @@ import java.time.Duration;
 
 public class WithSerenity extends UIInteractionSteps {
 
-    private final String SELENIUM_EASY_DEMO_SITE = "https://www.seleniumeasy.com/test/";
+    private final String SELENIUM_EASY_DEMO_SITE = "https://demo.seleniumeasy.com/";
 
     protected void openDemoPage(String page) {
         this.openUrl(SELENIUM_EASY_DEMO_SITE + page);
