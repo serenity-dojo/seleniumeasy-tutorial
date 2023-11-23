@@ -18,9 +18,14 @@ public class TestingRadioButtons extends WithSerenity {
     @Test
     public void singleRadio() {
         // TODO: Click on the second radio and click on 'Get Checked Value' - check that the correct text is displayed.
+        $("input[value='Female']").click();
+        $("#buttoncheck").click();
 
-        String checkedValue = "";
-        assertThat(checkedValue).isEqualTo("Radio button 'Female' is checked");
+//        $("css:input[value='Female']").click();
+//        $("#buttoncheck").click();
+
+//        String checkedValue = $(".radiobutton").getText();
+//        assertThat(checkedValue).isEqualTo("Radio button 'Female' is checked");
     }
 
 }

@@ -22,17 +22,26 @@ public class TestingDropdowns extends WithWebdriverSupport {
     @Test
     public void simpleSelectList() {
         // TODO: Select a day and check that the result is correctly displayed
+        new Select(driver.findElement(By.id("select-demo"))).selectByVisibleText("Monday");
 
-        String selectedValue = "";
-        assertThat(selectedValue).isEqualTo("Day selected :- Monday");
+        assertThat(driver.findElement(By.cssSelector(".selected-value")).getText()).isEqualTo("Day selected :- Monday");
     }
 
     @Test
     public void multiSelect() {
         // TODO: Select California","New York",and "Washington" in the dropdown
 
-        List<String> selectedOptions = null;
+        new Select(driver.findElement(By.id("multi-select"))).selectByVisibleText("California");
+        new Select(driver.findElement(By.id("multi-select"))).selectByVisibleText("New York");
+        new Select(driver.findElement(By.id("multi-select"))).selectByVisibleText("Washington");
+
+
+        List<String> selectedOptions = new Select(driver.findElement(By.id("multi-select"))).
+                getAllSelectedOptions().stream()
+                        .map(element -> element.getAttribute("value"))
+                        .collect(Collectors.toList());
 
         assertThat(selectedOptions).containsExactly("California","New York","Washington");
     }
 }
+

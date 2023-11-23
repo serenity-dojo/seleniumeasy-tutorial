@@ -17,17 +17,15 @@ public class TestingCheckboxes extends WithWebdriverSupport {
 
     @Test
     public void singleCheckbox() {
-        // TODO: Click on the first checkbox and check that a success message is displayed
-
-        String result = ""; // TODO: Fix me
+        driver.findElement(By.id("isAgeSelected")).click();
+        String result = driver.findElement(By.id("txtAge")).getText();
         assertThat(result).isEqualTo("Success - Check box is checked");
     }
 
     @Test
     public void multipleCheckboxes() {
-        // TODO: Click on all the checkboxes and ensure that the button text is "Uncheck All"
-
-        String result = ""; // TODO: Fix me
+        driver.findElements(By.cssSelector(".cb1-element")).forEach(WebElement::click);
+        String result = driver.findElement(By.id("check1")).getAttribute("value");
         assertThat(result).isEqualTo("Uncheck All");
     }
 }
