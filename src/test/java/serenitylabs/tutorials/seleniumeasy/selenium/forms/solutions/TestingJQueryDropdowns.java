@@ -23,7 +23,6 @@ public class TestingJQueryDropdowns extends WithWebdriverSupport {
         // TODO: Click on the dropdown and enter 'Ne', then select 'New Zealand' in the dropdown
 
         driver.findElement(By.cssSelector(".select2-selection--single")).click();
-        driver.findElement(By.cssSelector(".select2-search__field")).sendKeys("Ne");
 
         driver.findElement(By.xpath("//li[@class='select2-results__option'][.='New Zealand']")).click();
 

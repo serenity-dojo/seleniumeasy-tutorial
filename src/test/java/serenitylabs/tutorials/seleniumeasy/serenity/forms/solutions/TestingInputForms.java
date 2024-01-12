@@ -1,7 +1,7 @@
 package serenitylabs.tutorials.seleniumeasy.serenity.forms.solutions;
 
+import net.serenitybdd.annotations.Managed;
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,9 +12,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SerenityRunner.class)
 public class TestingInputForms extends WithSerenity {
-
-    @Managed(driver = "chrome")
-    WebDriver driver;
 
     @Before
     public void openPage() {
@@ -37,9 +34,9 @@ public class TestingInputForms extends WithSerenity {
         // TODO: Enter a number in each input field and verify the calculated total
 
         // Enter value for A: 1
-        $("#sum1").sendKeys("1");
+        $("[name=sum1]").sendKeys("1");
         // Enter value for B: 2
-        $("#sum2").sendKeys("2");
+        $("[name=sum2]").sendKeys("2");
         // Click on the Get Total button
         $("#gettotal button").click();
 

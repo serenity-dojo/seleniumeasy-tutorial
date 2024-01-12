@@ -2,9 +2,6 @@ package serenitylabs.tutorials.seleniumeasy.serenity.forms;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import serenitylabs.tutorials.seleniumeasy.selenium.WithWebdriverSupport;
 import serenitylabs.tutorials.seleniumeasy.serenity.WithSerenity;
 
 import static org.assertj.core.api.Assertions.assertThat;

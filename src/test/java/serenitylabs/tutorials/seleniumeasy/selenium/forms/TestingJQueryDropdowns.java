@@ -20,7 +20,7 @@ public class TestingJQueryDropdowns extends WithWebdriverSupport {
 
     @Test
     public void selectingInADropdownWithASearchBox() {
-        // TODO: Click on the dropdown and enter 'Ne', then select 'New Zealand' in the dropdown
+        // TODO: Click on the dropdown then select 'New Zealand' in the dropdown
 
         String selectedCountry = "";
 

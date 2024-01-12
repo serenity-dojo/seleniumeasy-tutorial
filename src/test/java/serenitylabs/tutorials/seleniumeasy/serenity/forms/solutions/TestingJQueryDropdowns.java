@@ -20,7 +20,6 @@ public class TestingJQueryDropdowns extends WithSerenity {
         // TODO: Click on the dropdown and enter 'Ne', then select 'New Zealand' in the dropdown
 
         $(".select2-selection--single").click();
-        $(".select2-search__field").sendKeys("Ne");
 
         $("//li[@class='select2-results__option'][.='New Zealand']").click();
 

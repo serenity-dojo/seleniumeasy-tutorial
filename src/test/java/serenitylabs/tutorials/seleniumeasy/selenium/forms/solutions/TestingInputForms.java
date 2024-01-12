@@ -29,9 +29,9 @@ public class TestingInputForms extends WithWebdriverSupport {
         // TODO: Enter a number in each input field and verify the calculated total
 
         // Enter value for A: 1
-        driver.findElement(By.id("sum1")).sendKeys("1");
+        driver.findElement(By.name("sum1")).sendKeys("1");
         // Enter value for B: 2
-        driver.findElement(By.id("sum2")).sendKeys("2");
+        driver.findElement(By.name("sum2")).sendKeys("2");
         // Click on the Get Total button
         driver.findElement(By.cssSelector("#gettotal button")).click();
 

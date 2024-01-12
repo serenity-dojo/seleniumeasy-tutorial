@@ -1,22 +1,15 @@
 package serenitylabs.tutorials.seleniumeasy.serenity.forms;
 
 import net.serenitybdd.junit.runners.SerenityRunner;
-import net.thucydides.core.annotations.Managed;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import serenitylabs.tutorials.seleniumeasy.selenium.WithWebdriverSupport;
 import serenitylabs.tutorials.seleniumeasy.serenity.WithSerenity;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SerenityRunner.class)
 public class TestingInputForms extends WithSerenity {
-
-    @Managed(driver = "chrome")
-    WebDriver driver;
 
     @Before
     public void openPage() {
